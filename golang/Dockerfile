@@ -3,7 +3,7 @@ FROM golang:1.12-alpine as builder
 WORKDIR /go/src/app
 
 COPY . .
-
+# flagas para gerar um binario reduzido
 RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w"
 
 FROM scratch
