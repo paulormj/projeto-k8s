@@ -4,13 +4,13 @@ WORKDIR /go/src/app
 
 COPY . .
 
-RUN go get -v ./...  \
-    && go build
+RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w"
 
 FROM scratch
 
+WORKDIR /go/src/app
+
 COPY --from=builder /go/src/app/app .
+COPY --from=builder /go/src/app/index.html .
 
-ENTRYPOINT ["./app"]
-
-#ENTRYPOINT ["go","run","main.go"]
+CMD ["./app"]
