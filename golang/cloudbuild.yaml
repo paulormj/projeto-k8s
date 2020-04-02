@@ -1,4 +1,5 @@
 steps:
+  #diretorio golang/main.go
 - id: "Build GO LANG - gcp "
   name: 'mirror.gcr.io/library/golang'
   env: ['GO111MODULE=on']
