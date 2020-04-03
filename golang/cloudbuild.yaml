@@ -8,7 +8,7 @@ steps:
 - id: "test"
   name: 'mirror.gcr.io/library/golang'
   #args: ['go','test', '--run', 'golang/main_test.go']
-  args: ['go','test']
+  args: ['go','test','golang/']
 
 - id: "build imagem"
   name: 'gcr.io/cloud-builders/docker'
