@@ -9,7 +9,7 @@ steps:
   name: 'mirror.gcr.io/library/golang'
   #args: ['go','test', '--run', 'golang/main_test.go']
   args: ["test","main_test.go"]
-  env: ["GOPATH=golang/"]
+  dir: 'golang/'
 
 - id: "build imagem"
   name: 'gcr.io/cloud-builders/docker'
