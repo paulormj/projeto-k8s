@@ -1,12 +1,15 @@
 steps:
+  #diretorio golang/main.go
 - id: "Build GO LANG - gcp "
   name: 'mirror.gcr.io/library/golang'
   env: ['GO111MODULE=on']
-  args: ['go','build','main.go']
+  args: ['go','build','golang/main.go']
 
 - id: "test"
   name: 'mirror.gcr.io/library/golang'
-  args: ['go','test', '-v']
+  #args: ['go','test', '--run', 'golang/main_test.go']
+  args: ["test","main_test.go"]
+  env: ["GOPATH=."]
 
 - id: "build imagem"
   name: 'gcr.io/cloud-builders/docker'
