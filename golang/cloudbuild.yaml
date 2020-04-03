@@ -19,7 +19,7 @@ steps:
   - 'version=1.1.0'
   - '-t'
   - 'gcr.io/$PROJECT_ID/server-golang-rocks:1.1.0'
-  - '.'
+  - 'golang/'
 - name: 'gcr.io/$PROJECT_ID/docker-compose'
   args: ['version']
 
