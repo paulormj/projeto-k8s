@@ -8,7 +8,8 @@ steps:
 - id: "test"
   name: 'mirror.gcr.io/library/golang'
   #args: ['go','test', '--run', 'golang/main_test.go']
-  args: ["test","main_test.go"]
+  #args: ["test","main_test.go"]
+  args: ['go','test', '-v']
   dir: 'golang/'
 
 - id: "build imagem"
